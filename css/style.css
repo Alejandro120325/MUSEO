@@ -1,3 +1,8 @@
+/* ============================================================
+   MUSEO ALBERTO MENA CAAMAÑO — Premium Stylesheet
+   Fuentes: Cormorant Garamond (display) + DM Sans (body)
+   ============================================================ */
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 /* ── CSS VARIABLES ────────────────────────────────────────── */
@@ -304,13 +309,11 @@ nav a.active {
 .hero {
     min-height: 92vh;
     display: flex;
-    flex-direction: column; /* Añadido para apilar los elementos verticalmente */
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
     text-align: center;
-    padding: 80px 24px; /* Añadido un padding de seguridad */
 }
 
 .hero-bg {
@@ -447,16 +450,15 @@ nav a.active {
 
 /* Hero Stats */
 .hero-stats {
-    /* Eliminamos la posición absoluta que causaba el cruce visual */
-    position: relative;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     gap: 40px;
     z-index: 2;
     animation: heroFadeUp 1.4s cubic-bezier(0.22,1,0.36,1) both;
     animation-delay: 0.8s;
-    margin-top: 60px; /* Separación garantizada con los botones superiores */
-    flex-wrap: wrap; /* Evita desbordamientos en pantallas más pequeñas */
-    justify-content: center;
 }
 
 .hero-stat {
@@ -577,12 +579,13 @@ main {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 60px 40px; /* Ajustamos el padding para centrar mejor */
+    padding: 60px 40px;
     margin-bottom: 80px;
-    display: flex; /* Cambiamos de grid a flex */
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center; /* Centramos el texto */
+    align-items: center; /* Centra el bloque horizontalmente */
+    justify-content: center;
+    text-align: center; /* Centra el texto en sí mismo */
     position: relative;
     overflow: hidden;
 }
@@ -598,12 +601,17 @@ main {
     border-radius: 50%;
 }
 
+.intro-card-text {
+    max-width: 700px; /* Evita que el texto se estire de lado a lado en pantallas grandes */
+    margin: 0 auto;
+}
+
 .intro-card-text h2 {
     font-family: var(--font-display);
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     font-weight: 300;
     line-height: 1.2;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     color: var(--text);
 }
 
@@ -614,10 +622,8 @@ main {
 
 .intro-card-text p {
     color: var(--text-2);
-    line-height: 1.75;
-    font-size: 0.98rem;
-    max-width: 700px; /* Evita que las líneas de texto sean muy largas y cansen la vista */
-    margin: 0 auto; /* Asegura que el párrafo esté centrado */
+    line-height: 1.8;
+    font-size: 1.05rem;
 }
 
 .intro-card-facts {
@@ -1521,4 +1527,393 @@ footer {
     .hero-stats { display: none; }
     .gallery-grid { grid-template-columns: 1fr; }
     .gallery-item:nth-child(n) { grid-column: span 1; grid-row: span 1; }
+}
+
+
+/* ============================================================
+   ANIMATED CARD HERO — #hero-animated
+   Estilos con prefijo "hc-" para evitar conflictos con el
+   resto del sitio. Mecánica: Animated Card Opening (GSAP).
+   ============================================================ */
+
+/* ── SECTION CONTAINER ───────────────────────────────────── */
+#hero-animated {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #080808;
+    color: rgba(255,255,255,0.9);
+    font-family: var(--font-body);
+}
+
+/* ── CARDS ───────────────────────────────────────────────── */
+.hc-card {
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* Ajustamos para que muestre la mejor parte de la foto */
+    background-position: center center;
+    background-size: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Sombra más elegante y difuminada */
+}
+
+.hc-card-overlay {
+    position: absolute;
+    inset: 0;
+    /* Aclaramos el filtro para que las fotos pequeñas SÍ se vean */
+    background: linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.1) 0%,
+            rgba(0,0,0,0.3) 50%,
+            rgba(0,0,0,0.8) 100%
+    );
+}
+
+/* ── CARD CONTENT (thumbnail label) ──────────────────────── */
+.hc-card-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: rgba(255,255,255,0.9);
+    padding-left: 16px;
+}
+
+.hc-content-bar {
+    width: 28px;
+    height: 4px;
+    border-radius: 99px;
+    background: var(--gold);
+    margin-bottom: 6px;
+    margin-top: 6px;
+}
+
+.hc-content-place {
+    font-size: 11px;
+    font-weight: 500;
+    opacity: 0.8;
+    letter-spacing: 0.04em;
+}
+
+.hc-content-title-1,
+.hc-content-title-2 {
+    font-weight: 700;
+    font-size: 16px;
+    font-family: var(--font-display);
+    line-height: 1.1;
+}
+
+/* ── DETAILS PANEL ───────────────────────────────────────── */
+/* DETAILS PANEL */
+.hc-details {
+    z-index: 22;
+    position: absolute;
+    top: 90px; /* JEFE: Antes estaba en 150px. Lo subimos 60px para dar espacio abajo */
+    left: 60px;
+    max-width: 520px;
+}
+
+/* Place label */
+.hc-place-box {
+    height: 46px;
+    overflow: hidden;
+}
+
+.hc-text {
+    padding-top: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.02em;
+}
+
+.hc-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    border-radius: 99px;
+    background: var(--gold);
+}
+
+/* Title lines */
+.hc-title-box-1,
+.hc-title-box-2 {
+    margin-top: 2px;
+    height: 96px;
+    overflow: hidden;
+}
+
+/* Achicamos un pelín la letra máxima para que no ocupe tanto alto */
+.hc-title-1,
+.hc-title-2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(42px, 6vw, 60px); /* JEFE: Reducido de 72px a 60px */
+    line-height: 1.0;
+    color: #fff;
+    letter-spacing: -0.01em;
+}
+
+.hc-title-2 {
+    color: var(--gold-light);
+    font-style: italic;
+}
+
+/* Description */
+.hc-desc {
+    margin-top: 18px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.72);
+    font-weight: 300;
+    max-width: 500px;
+}
+
+/* CTA buttons */
+/* Subimos un poco los botones */
+.hc-cta {
+    margin-top: 18px; /* JEFE: Reducido de 28px a 18px */
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.hc-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    background: var(--gold);
+    color: #000;
+    padding: 12px 26px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.hc-btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(196,151,58,0.45);
+}
+
+.hc-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    color: rgba(255,255,255,0.85);
+    padding: 11px 22px;
+    border-radius: 30px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    transition: all 0.3s;
+}
+
+.hc-btn-secondary:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.6);
+    transform: translateY(-2px);
+}
+
+/* ── INDICATOR BAR (top, gold sweep) ─────────────────────── */
+.hc-indicator {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 4px;
+    z-index: 60;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+}
+
+/* ── PAGINATION ──────────────────────────────────────────── */
+.hc-pagination {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    z-index: 60;
+}
+
+.hc-arrow {
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: all 0.25s;
+    backdrop-filter: blur(8px);
+    background: rgba(0,0,0,0.2);
+}
+
+.hc-arrow:hover {
+    border-color: var(--gold);
+    background: rgba(196,151,58,0.2);
+}
+
+.hc-arrow:nth-child(2) { margin-left: 16px; }
+
+.hc-arrow svg {
+    width: 22px;
+    height: 22px;
+    stroke-width: 2;
+    color: rgba(255,255,255,0.85);
+}
+
+/* Progress sub-bar */
+.hc-progress-sub-container {
+    margin-left: 20px;
+    z-index: 60;
+    width: 500px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.hc-progress-sub-background {
+    width: 100%;
+    height: 2px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 2px;
+}
+
+.hc-progress-sub-foreground {
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+/* Slide numbers */
+.hc-slide-numbers {
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    z-index: 60;
+    position: relative;
+}
+
+.hc-slide-item {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    color: white;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    font-size: 28px;
+    font-weight: 700;
+    font-family: var(--font-display);
+}
+
+/* ── SCROLL HINT ─────────────────────────────────────────── */
+.hc-scroll-hint {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    opacity: 0;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.hc-scroll-mouse {
+    width: 20px;
+    height: 32px;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 4px;
+}
+
+.hc-scroll-dot {
+    width: 3px;
+    height: 7px;
+    background: var(--gold);
+    border-radius: 2px;
+    animation: scrollDown 2.2s ease infinite;
+}
+
+/* ── INITIAL COVER (dark sweep) ──────────────────────────── */
+.hc-cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #080808;
+    z-index: 100;
+}
+
+/* ── LIGHT MODE ADJUSTMENTS ──────────────────────────────── */
+body.light #hero-animated {
+    background: #1a1a1a; /* hero always stays dark */
+}
+
+body.light .hc-cover {
+    background: #1a1a1a;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .hc-details {
+        top: 160px;
+        left: 28px;
+        max-width: calc(100vw - 56px);
+    }
+
+    .hc-title-1,
+    .hc-title-2 {
+        font-size: clamp(36px, 8vw, 52px);
+    }
+
+    .hc-title-box-1,
+    .hc-title-box-2 {
+        height: 70px;
+    }
+
+    .hc-desc { display: none; }
+
+    .hc-progress-sub-container { width: 200px; }
+}
+
+@media (max-width: 600px) {
+    .hc-details { top: 140px; left: 20px; }
+
+    .hc-title-1,
+    .hc-title-2 { font-size: 32px; }
+
+    .hc-title-box-1,
+    .hc-title-box-2 { height: 56px; }
+
+    .hc-cta { gap: 10px; }
+
+    .hc-btn-primary,
+    .hc-btn-secondary { font-size: 0.75rem; padding: 10px 18px; }
+
+    .hc-progress-sub-container { display: none; }
 }

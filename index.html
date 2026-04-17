@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Museo Alberto Mena Caamaño — Centro Cultural Metropolitano de Quito. Historia, arte y memoria del Ecuador desde 1957.">
-    <title>Museo de Cera | Inicio</title>
+    <title>Museo Alberto Mena Caamaño | Inicio</title>
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* JEFE: Este parche asegura que los títulos largos nunca se corten */
+        .hc-title-box-1, .hc-title-box-2 {
+            height: auto !important;
+            overflow: visible !important;
+            padding-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
 
-<div id="loader">
-    <div class="loader-logo">MUSEO<span>.</span>MC</div>
-    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
-</div>
-
 <div id="scroll-progress"></div>
 
-<nav>
+<nav id="main-nav">
     <div class="nav-container">
         <a href="index.html" class="logo">
-            <div class="logo-icon">🏛️</div>
+            <div class="logo-icon">&#127963;</div>
             <div class="logo-text">MUSEO<span class="gold">.</span>MC</div>
         </a>
         <ul>
@@ -30,7 +33,7 @@
         </ul>
         <div class="nav-controls">
             <button class="theme-btn" id="theme-btn" title="Cambiar tema" aria-label="Cambiar tema">
-                <span id="theme-icon">☀️</span>
+                <span id="theme-icon">&#9728;</span>
             </button>
             <button class="hamburger" id="hamburger" aria-label="Menú">
                 <span></span><span></span><span></span>
@@ -40,46 +43,51 @@
 </nav>
 
 <div class="mobile-nav" id="mobile-nav">
-    <a href="index.html" class="active">🏠 Inicio</a>
-    <a href="galeria.html">🖼️ Galería</a>
-    <a href="evaluacion.html">📝 Evaluación</a>
+    <a href="index.html" class="active">Inicio</a>
+    <a href="galeria.html">Galería</a>
+    <a href="evaluacion.html">Evaluación</a>
 </div>
 
-<header class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-gradient"></div>
+<section id="hero-animated">
 
-    <div class="hero-content">
-        <div class="hero-tag">
-            <span>🏛️</span> Centro Histórico de Quito, Ecuador
+    <div class="hc-indicator"></div>
+
+    <div id="demo"></div>
+
+    <div class="hc-details" id="details-even">
+        <div class="hc-place-box">
+            <div class="hc-text">Centro Histórico de Quito</div>
         </div>
-        <h1>Museo Alberto<br><em>Mena Caamaño</em></h1>
-        <p class="hero-sub">
-            Donde la historia cobra vida. Más de 5.800 piezas y figuras de cera que recrean los eventos que forjaron el Ecuador.
-        </p>
-        <div class="hero-actions">
-            <a href="#info" class="btn-primary">
-                <span>Explorar Museo</span> <span>↓</span>
-            </a>
-            <a href="galeria.html" class="btn-secondary">
-                <span>Ver Galería</span> <span>→</span>
-            </a>
+        <div class="hc-title-box-1"><div class="hc-title-1">MUSEO</div></div>
+        <div class="hc-title-box-2"><div class="hc-title-2">MENA CAAMAÑO</div></div>
+        <div class="hc-desc">Institución cultural del Centro Histórico de Quito.</div>
+        <div class="hc-cta">
+            <a href="#info" class="hc-btn-primary">Explorar Museo</a>
+            <a href="galeria.html" class="hc-btn-secondary">Ver Galería</a>
         </div>
     </div>
 
-    <div class="hero-stats">
-        <div class="hero-stat"><strong>1957</strong><span>Fundación</span></div>
-        <div class="hero-stat"><strong>5.819</strong><span>Piezas</span></div>
-        <div class="hero-stat"><strong>10</strong><span>Capítulos</span></div>
-        <div class="hero-stat"><strong>$0.75</strong><span>Estudiantes</span></div>
+    <div class="hc-details" id="details-odd">
+        <div class="hc-place-box">
+            <div class="hc-text">Centro Histórico de Quito</div>
+        </div>
+        <div class="hc-title-box-1"><div class="hc-title-1">MUSEO</div></div>
+        <div class="hc-title-box-2"><div class="hc-title-2">MENA CAAMAÑO</div></div>
+        <div class="hc-desc">Institución cultural del Centro Histórico de Quito.</div>
+        <div class="hc-cta">
+            <a href="#info" class="hc-btn-primary">Explorar Museo</a>
+            <a href="galeria.html" class="hc-btn-secondary">Ver Galería</a>
+        </div>
     </div>
 
-    <div class="scroll-indicator">
-        <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+    <div class="hc-scroll-hint" id="hc-scroll-hint">
+        <div class="hc-scroll-mouse"><div class="hc-scroll-dot"></div></div>
+        <span>Scroll</span>
     </div>
-</header>
 
+    <div class="hc-cover"></div>
+
+</section>
 <main>
 
     <div class="intro-card" data-aos="fade-up">
@@ -101,20 +109,19 @@
             <h2>Información <em>Esencial</em></h2>
             <div class="section-divider"></div>
         </div>
-
         <div class="info-grid">
             <div class="info-card" data-aos="fade-up" data-aos-delay="0">
-                <div class="info-card-icon">📍</div>
+                <div class="info-card-icon">&#128205;</div>
                 <h3>Ubicación</h3>
                 <p>García Moreno y Espejo<br>Centro Histórico, Quito</p>
             </div>
             <div class="info-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="info-card-icon">⏰</div>
+                <div class="info-card-icon">&#9200;</div>
                 <h3>Horarios</h3>
                 <p>Martes a Domingo<br>09:00 – 16:30 hrs</p>
             </div>
             <div class="info-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="info-card-icon">🎟️</div>
+                <div class="info-card-icon">&#127903;</div>
                 <h3>Entrada</h3>
                 <p class="highlight">$0.75 estudiantes</p>
                 <p>Acceso parte del Centro Cultural Metropolitano</p>
@@ -122,14 +129,13 @@
         </div>
     </section>
 
-    <section class="historia-section">
+    <section class="historia-section" id="historia">
         <div class="section-header" data-aos="fade-up">
             <span class="section-tag">Historia del Museo</span>
             <h2>Un Edificio con <em>Memoria</em></h2>
             <p>Desde cuartel colonial hasta templo de la cultura quiteña.</p>
             <div class="section-divider"></div>
         </div>
-
         <div class="timeline">
             <div class="timeline-item" data-aos="fade-right">
                 <div class="timeline-dot"></div>
@@ -170,42 +176,23 @@
         </div>
     </section>
 
-    <section data-aos="fade-up">
+    <section data-aos="fade-up" id="coleccion">
         <div class="section-header">
             <span class="section-tag">Colección</span>
             <h2>5.819 Piezas de <em>Historia</em></h2>
             <p>Una colección que abarca arte colonial, arqueología, tecnología histórica y las icónicas figuras de cera.</p>
             <div class="section-divider"></div>
         </div>
-
         <div class="coleccion-grid">
-            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="0">
-                <span>🏺</span><span>Fondo Arqueológico</span>
-            </div>
-            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="50">
-                <span>🖼️</span><span>Fondo Pictórico Colonial</span>
-            </div>
-            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="100">
-                <span>🗿</span><span>Fondo Escultórico</span>
-            </div>
-            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="150">
-                <span>📜</span><span>Fondo Documental</span>
-            </div>
-            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="200">
-                <span>🧵</span><span>Fondo Textil</span>
-            </div>
-            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="250">
-                <span>⚔️</span><span>Fondo Metalúrgico</span>
-            </div>
-            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="300">
-                <span>🪑</span><span>Artes Decorativas</span>
-            </div>
-            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="350">
-                <span>📻</span><span>Tecnología Histórica</span>
-            </div>
-            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="400">
-                <span>🕯️</span><span>Figuras de Cera</span>
-            </div>
+            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="0"><span>&#128378;</span><span>Fondo Arqueológico</span></div>
+            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="50"><span>&#128444;</span><span>Fondo Pictórico Colonial</span></div>
+            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="100"><span>&#128511;</span><span>Fondo Escultórico</span></div>
+            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="150"><span>&#128220;</span><span>Fondo Documental</span></div>
+            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="200"><span>&#129525;</span><span>Fondo Textil</span></div>
+            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="250"><span>&#9876;</span><span>Fondo Metalúrgico</span></div>
+            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="300"><span>&#129681;</span><span>Artes Decorativas</span></div>
+            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="350"><span>&#128251;</span><span>Tecnología Histórica</span></div>
+            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="400"><span>&#128167;</span><span>Figuras de Cera</span></div>
         </div>
     </section>
 
@@ -215,7 +202,7 @@
     <div class="footer-grid">
         <div class="footer-brand">
             <a href="index.html" class="logo">
-                <div class="logo-icon">🏛️</div>
+                <div class="logo-icon">&#127963;</div>
                 <div class="logo-text">MUSEO<span class="gold">.</span>MC</div>
             </a>
             <p>El Museo Alberto Mena Caamaño preserva la memoria histórica de Quito y el Ecuador a través de arte, arqueología y la recreación de eventos clave de la independencia.</p>
@@ -243,10 +230,225 @@
     </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="./js/main.js"></script>
 <script>
     AOS.init({ duration: 900, once: true, offset: 60, easing: 'ease-out-cubic' });
+</script>
+
+<script>
+    /* ============================================================
+       Animated Card Opening — Museo Alberto Mena Caamaño
+       ============================================================ */
+
+    const museumData = [
+        {
+            place:    'Centro Histórico de Quito · Ecuador',
+            title:    'MUSEO',
+            title2:   'MENA CAAMAÑO',
+            desc:     'Institución cultural ubicada en el corazón del Centro Histórico de Quito. Parte del Centro Cultural Metropolitano, preserva más de 5.819 piezas del patrimonio ecuatoriano desde su fundación en 1957.',
+            image:    './img/museo2.png',
+            link:     '#info',
+            linkText: 'Explorar Museo'
+        },
+        {
+            place:    'Quito · 2 de Agosto de 1810',
+            title:    'LA MASACRE',
+            title2:   'DE LOS PATRIOTAS',
+            desc:     'La escena más emblemática: la recreación con figuras de cera de la masacre del 2 de agosto de 1810, donde los patriotas de la Junta de Gobierno Autónoma de Quito fueron asesinados en las celdas del cuartel.',
+            image:    './img/masacre2.jpg',
+            link:     'galeria.html',
+            linkText: 'Ver Galería'
+        },
+        {
+            place:    'Colección Permanente · 10 Capítulos',
+            title:    'DE QUITO',
+            title2:   'AL ECUADOR',
+            desc:     'La exposición permanente recorre desde la misión geodésica francesa de 1736 hasta la anexión a la Gran Colombia en 1822, combinando pinturas coloniales, documentos históricos y figuras de cera en diez capítulos.',
+            image:    './img/quito1.png',
+            link:     '#info',
+            linkText: 'Más Información'
+        },
+        {
+            place:    'Fundado el 28 de Mayo · 1957',
+            title:    'DONACIÓN',
+            title2:   'MENA CAAMAÑO',
+            desc:     'Alberto Mena Caamaño donó al Municipio de Quito más de 600 objetos: pinturas, esculturas, piezas arqueológicas y armas. De esas 600 piezas originales, la colección creció hasta las 5.819 piezas actuales.',
+            image:    './img/donacion2.png',
+            link:     'evaluacion.html',
+            linkText: 'Quiz Histórico'
+        },
+        {
+            place:    'Arte · Arqueología · Cera · Historia',
+            title:    'LA COLECCIÓN',
+            title2:   '5.819 PIEZAS',
+            desc:     'Nueve fondos patrimoniales: arqueológico, pictórico colonial (Miguel de Santiago, Eduardo Kingman), escultórico, documental, textil, metalúrgico, artes decorativas, tecnología histórica y las figuras de cera de Barbieri.',
+            image:    './img/coleccion1.jpg',
+            link:     '#coleccion',
+            linkText: 'Ver Colección'
+        }
+    ];
+
+    const $id = (id) => document.getElementById(id);
+    const $q  = (sel) => document.querySelector(sel);
+
+    $id('demo').innerHTML =
+        museumData.map((d, i) =>
+            `<div class="hc-card" id="card${i}" style="background-image:url(${d.image})">
+       <div class="hc-card-overlay"></div>
+     </div>`
+        ).join('') +
+        museumData.map((d, i) =>
+            `<div class="hc-card-content" id="card-content-${i}">
+       <div class="hc-content-bar"></div>
+       <div class="hc-content-place">${d.place}</div>
+       <div class="hc-content-title-1">${d.title}</div>
+       <div class="hc-content-title-2">${d.title2}</div>
+     </div>`
+        ).join('');
+
+    const set  = gsap.set;
+    const ease = 'sine.inOut';
+
+    const getCard    = (i) => `#card${i}`;
+    const getContent = (i) => `#card-content-${i}`;
+
+    function anim(target, dur, props) {
+        return new Promise(res => gsap.to(target, { ...props, duration: dur, onComplete: res }));
+    }
+
+    let offsetTop  = 200;
+    let offsetLeft = 700;
+    const CW = 280, CH = 180, GAP = 30;
+
+    let order       = [0, 1, 2, 3, 4];
+    let isEven      = true;
+    let isStepping  = false;
+
+    function patchPanel(sel, idx) {
+        const d = museumData[idx];
+        $q(sel + ' .hc-text').textContent     = d.place;
+        $q(sel + ' .hc-title-1').textContent  = d.title;
+        $q(sel + ' .hc-title-2').textContent  = d.title2;
+        $q(sel + ' .hc-desc').textContent     = d.desc;
+        const btn = $q(sel + ' .hc-btn-primary');
+        btn.href = d.link; btn.textContent = d.linkText;
+    }
+
+    function init() {
+        const [active, ...rest] = order;
+        const dA = isEven ? '#details-even' : '#details-odd';
+        const dI = isEven ? '#details-odd'  : '#details-even';
+        const { innerWidth: W, innerHeight: H } = window;
+
+        offsetTop  = H - 320;
+        offsetLeft = (W / 2) - 50;
+
+        set(getCard(active),    { x: 0, y: 0, width: W, height: H });
+        set(getContent(active), { x: 0, y: 0, opacity: 0 });
+
+        set(dA, { opacity: 0, zIndex: 22, y: 30 });
+        set(dI, { opacity: 0, zIndex: 12 });
+        ['hc-text','hc-title-1','hc-title-2'].forEach(c => set(`${dI} .${c}`, { y: 100 }));
+        set(`${dI} .hc-desc`, { y: 50 });
+        set(`${dI} .hc-cta`,  { y: 60 });
+
+        rest.forEach((i, idx) => {
+            set(getCard(i),    { x: offsetLeft + 400 + idx*(CW+GAP), y: offsetTop, width: CW, height: CH, zIndex: 30, borderRadius: 10 });
+            set(getContent(i), { x: offsetLeft + 400 + idx*(CW+GAP), y: offsetTop + CH - 100, zIndex: 40, opacity: 1 });
+        });
+
+        set('.hc-indicator', { x: -W });
+
+        const D = 0.6;
+        gsap.to('.hc-cover', { x: W + 400, delay: 0.5, ease, onComplete: () => setTimeout(loop, 500) });
+
+        rest.forEach((i, idx) => {
+            gsap.to(getCard(i),    { x: offsetLeft + idx*(CW+GAP), zIndex: 30, ease, delay: D });
+            gsap.to(getContent(i), { x: offsetLeft + idx*(CW+GAP), zIndex: 40, ease, delay: D });
+        });
+
+        gsap.to(dA,               { opacity: 1, y: 0, ease, delay: D });
+        gsap.to('#hc-scroll-hint',{ opacity: 1, y: 0, ease, delay: D + 0.5 });
+
+        patchPanel(dA, active);
+    }
+
+    function step() {
+        return new Promise(resolve => {
+            order.push(order.shift());
+            isEven = !isEven;
+
+            const dA = isEven ? '#details-even' : '#details-odd';
+            const dI = isEven ? '#details-odd'  : '#details-even';
+
+            patchPanel(dA, order[0]);
+
+            set(dA, { zIndex: 22 });
+            gsap.to(dA, { opacity: 1, delay: 0.4, ease });
+            gsap.to(`${dA} .hc-text`,    { y: 0, delay: 0.10, duration: 0.7, ease });
+            gsap.to(`${dA} .hc-title-1`, { y: 0, delay: 0.15, duration: 0.7, ease });
+            gsap.to(`${dA} .hc-title-2`, { y: 0, delay: 0.15, duration: 0.7, ease });
+            gsap.to(`${dA} .hc-desc`,    { y: 0, delay: 0.30, duration: 0.4, ease });
+            gsap.to(`${dA} .hc-cta`,     { y: 0, delay: 0.35, duration: 0.4, ease, onComplete: resolve });
+            set(dI, { zIndex: 12 });
+
+            const [active, ...rest] = order;
+            const prv = rest[rest.length - 1];
+
+            set(getCard(prv),    { zIndex: 10 });
+            set(getCard(active), { zIndex: 20 });
+            gsap.to(getCard(prv), { scale: 1.5, ease });
+
+            gsap.to(getContent(active), { y: offsetTop + CH - 10, opacity: 0, duration: 0.3, ease });
+
+            gsap.to(getCard(active), {
+                x: 0, y: 0, ease,
+                width: window.innerWidth, height: window.innerHeight,
+                borderRadius: 0,
+                onComplete: () => {
+                    const xNew = offsetLeft + (rest.length - 1) * (CW + GAP);
+                    set(getCard(prv),    { x: xNew, y: offsetTop, width: CW, height: CH, zIndex: 30, borderRadius: 10, scale: 1 });
+                    set(getContent(prv), { x: xNew, y: offsetTop + CH - 100, opacity: 1, zIndex: 40 });
+
+                    set(dI, { opacity: 0 });
+                    ['hc-text','hc-title-1','hc-title-2'].forEach(c => set(`${dI} .${c}`, { y: 100 }));
+                    set(`${dI} .hc-desc`, { y: 50 });
+                    set(`${dI} .hc-cta`,  { y: 60 });
+                }
+            });
+
+            rest.forEach((i, idx) => {
+                if (i !== prv) {
+                    const xN = offsetLeft + idx * (CW + GAP);
+                    set(getCard(i), { zIndex: 30 });
+                    gsap.to(getCard(i),    { x: xN, y: offsetTop, width: CW, height: CH, ease, delay: 0.1*(idx+1) });
+                    gsap.to(getContent(i), { x: xN, y: offsetTop + CH - 100, opacity: 1, zIndex: 40, ease, delay: 0.1*(idx+1) });
+                }
+            });
+        });
+    }
+
+    async function loop() {
+        // JEFE: Tiempo de 6 segundos ajustado
+        await anim('.hc-indicator', 3.0, { x: 0, ease: "none" });
+        await anim('.hc-indicator', 0.4, { x: window.innerWidth });
+        set('.hc-indicator', { x: -window.innerWidth });
+        await step();
+        loop();
+    }
+
+    async function start() {
+        await Promise.all(
+            museumData.map(({ image }) =>
+                new Promise(res => { const i = new Image(); i.onload = i.onerror = res; i.src = image; })
+            )
+        );
+        init();
+    }
+
+    start();
 </script>
 
 </body>
