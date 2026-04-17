@@ -1,10 +1,253 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Museo Alberto Mena Caamaño — Centro Cultural Metropolitano de Quito. Historia, arte y memoria del Ecuador desde 1957.">
+    <title>Museo de Cera | Inicio</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-$END$
+
+<div id="loader">
+    <div class="loader-logo">MUSEO<span>.</span>MC</div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+</div>
+
+<div id="scroll-progress"></div>
+
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">🏛️</div>
+            <div class="logo-text">MUSEO<span class="gold">.</span>MC</div>
+        </a>
+        <ul>
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="evaluacion.html">Evaluación</a></li>
+        </ul>
+        <div class="nav-controls">
+            <button class="theme-btn" id="theme-btn" title="Cambiar tema" aria-label="Cambiar tema">
+                <span id="theme-icon">☀️</span>
+            </button>
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div class="mobile-nav" id="mobile-nav">
+    <a href="index.html" class="active">🏠 Inicio</a>
+    <a href="galeria.html">🖼️ Galería</a>
+    <a href="evaluacion.html">📝 Evaluación</a>
+</div>
+
+<header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-gradient"></div>
+
+    <div class="hero-content">
+        <div class="hero-tag">
+            <span>🏛️</span> Centro Histórico de Quito, Ecuador
+        </div>
+        <h1>Museo Alberto<br><em>Mena Caamaño</em></h1>
+        <p class="hero-sub">
+            Donde la historia cobra vida. Más de 5.800 piezas y figuras de cera que recrean los eventos que forjaron el Ecuador.
+        </p>
+        <div class="hero-actions">
+            <a href="#info" class="btn-primary">
+                <span>Explorar Museo</span> <span>↓</span>
+            </a>
+            <a href="galeria.html" class="btn-secondary">
+                <span>Ver Galería</span> <span>→</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="hero-stats">
+        <div class="hero-stat"><strong>1957</strong><span>Fundación</span></div>
+        <div class="hero-stat"><strong>5.819</strong><span>Piezas</span></div>
+        <div class="hero-stat"><strong>10</strong><span>Capítulos</span></div>
+        <div class="hero-stat"><strong>$0.75</strong><span>Estudiantes</span></div>
+    </div>
+
+    <div class="scroll-indicator">
+        <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+    </div>
+</header>
+
+<main>
+
+    <div class="intro-card" data-aos="fade-up">
+        <div class="intro-card-text">
+            <h2><em>De Quito al Ecuador</em><br>1736 – 1830</h2>
+            <p>
+                Ubicado en el corazón del Centro Histórico de Quito, este museo recrea con
+                figuras de cera los eventos más determinantes de la historia ecuatoriana.
+                Su exposición permanente recorre desde la llegada de la misión geodésica
+                francesa hasta la anexión a la Gran Colombia, a través de diez capítulos
+                que mezclan arte, arqueología y tecnología histórica.
+            </p>
+        </div>
+    </div>
+
+    <section id="info">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Visita el Museo</span>
+            <h2>Información <em>Esencial</em></h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="info-card-icon">📍</div>
+                <h3>Ubicación</h3>
+                <p>García Moreno y Espejo<br>Centro Histórico, Quito</p>
+            </div>
+            <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="info-card-icon">⏰</div>
+                <h3>Horarios</h3>
+                <p>Martes a Domingo<br>09:00 – 16:30 hrs</p>
+            </div>
+            <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="info-card-icon">🎟️</div>
+                <h3>Entrada</h3>
+                <p class="highlight">$0.75 estudiantes</p>
+                <p>Acceso parte del Centro Cultural Metropolitano</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="historia-section">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Historia del Museo</span>
+            <h2>Un Edificio con <em>Memoria</em></h2>
+            <p>Desde cuartel colonial hasta templo de la cultura quiteña.</p>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">Siglo XVI</div>
+                <h4>Cuartel Real de Lima</h4>
+                <p>El edificio es construido como cuartel colonial. Sus calabozos, conocidos como Presidio del Real de Lima, alojan entre otros al prócer Eugenio de Santa Cruz y Espejo.</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-right" data-aos-delay="80">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2 de agosto de 1810</div>
+                <h4>La Masacre Histórica</h4>
+                <p>En este mismo edificio son asesinados los patriotas que habían conformado la Junta de Gobierno Autónoma de Quito, en el trágico evento que el museo recrea con figuras de cera.</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-right" data-aos-delay="160">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">28 mayo 1957</div>
+                <h4>Fundación del Museo</h4>
+                <p>Creado por ordenanza municipal a partir de la donación del filántropo Alberto Mena Caamaño: más de 600 objetos entre pinturas, esculturas, piezas arqueológicas y armas.</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-right" data-aos-delay="240">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">3 noviembre 1959</div>
+                <h4>Apertura al Público</h4>
+                <p>Tras la restauración integral del edificio a cargo del ingeniero Juan Villacreses, con refuerzo de acero y concreto, el museo abre sus puertas.</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-right" data-aos-delay="320">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">1970</div>
+                <h4>El Museo de Cera</h4>
+                <p>Se integra la sala temática sobre la Masacre del 2 de agosto de 1810 con figuras de cera de Francisco Barbieri. Desde entonces es popularmente conocido como "Museo de Cera".</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-right" data-aos-delay="400">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">27 noviembre 2002</div>
+                <h4>Reapertura Definitiva</h4>
+                <p>Tras la rehabilitación integral a cargo del FONSAL, el museo reabre con su oferta actual: exposición permanente, cuatro salas temporales y el auditorio "Hugo Alemán".</p>
+            </div>
+        </div>
+    </section>
+
+    <section data-aos="fade-up">
+        <div class="section-header">
+            <span class="section-tag">Colección</span>
+            <h2>5.819 Piezas de <em>Historia</em></h2>
+            <p>Una colección que abarca arte colonial, arqueología, tecnología histórica y las icónicas figuras de cera.</p>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="coleccion-grid">
+            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="0">
+                <span>🏺</span><span>Fondo Arqueológico</span>
+            </div>
+            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="50">
+                <span>🖼️</span><span>Fondo Pictórico Colonial</span>
+            </div>
+            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="100">
+                <span>🗿</span><span>Fondo Escultórico</span>
+            </div>
+            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="150">
+                <span>📜</span><span>Fondo Documental</span>
+            </div>
+            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="200">
+                <span>🧵</span><span>Fondo Textil</span>
+            </div>
+            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="250">
+                <span>⚔️</span><span>Fondo Metalúrgico</span>
+            </div>
+            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="300">
+                <span>🪑</span><span>Artes Decorativas</span>
+            </div>
+            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="350">
+                <span>📻</span><span>Tecnología Histórica</span>
+            </div>
+            <div class="coleccion-item" data-aos="fade-up" data-aos-delay="400">
+                <span>🕯️</span><span>Figuras de Cera</span>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🏛️</div>
+                <div class="logo-text">MUSEO<span class="gold">.</span>MC</div>
+            </a>
+            <p>El Museo Alberto Mena Caamaño preserva la memoria histórica de Quito y el Ecuador a través de arte, arqueología y la recreación de eventos clave de la independencia.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="evaluacion.html">Evaluación</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Visita</h4>
+            <ul>
+                <li><a href="#">García Moreno y Espejo</a></li>
+                <li><a href="#">Mar–Dom · 09:00–16:30</a></li>
+                <li><a href="#">Centro Histórico, Quito</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 · Proyecto UPS — <a href="#">Alejo</a></p>
+        <p>Museo Alberto Mena Caamaño · Centro Cultural Metropolitano</p>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="./js/main.js"></script>
+<script>
+    AOS.init({ duration: 900, once: true, offset: 60, easing: 'ease-out-cubic' });
+</script>
+
 </body>
 </html>

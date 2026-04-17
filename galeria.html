@@ -1,10 +1,211 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galería del Museo Alberto Mena Caamaño — Fotografías históricas y recorrido visual por la colección.">
+    <title>Galería | Museo Alberto Mena Caamaño</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-$END$
+
+<!-- ── LOADER ─────────────────────────────────────────────── -->
+<div id="loader">
+    <div class="loader-logo">MUSEO<span>.</span>MC</div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+</div>
+
+<!-- ── SCROLL PROGRESS ────────────────────────────────────── -->
+<div id="scroll-progress"></div>
+
+<!-- ── NAV ────────────────────────────────────────────────── -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">🏛️</div>
+            <div class="logo-text">MUSEO<span class="gold">.</span>MC</div>
+        </a>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="galeria.html" class="active">Galería</a></li>
+            <li><a href="evaluacion.html">Evaluación</a></li>
+        </ul>
+        <div class="nav-controls">
+            <button class="theme-btn" id="theme-btn" title="Cambiar tema" aria-label="Cambiar tema">
+                <span id="theme-icon">☀️</span>
+            </button>
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobile-nav">
+    <a href="index.html">🏠 Inicio</a>
+    <a href="galeria.html" class="active">🖼️ Galería</a>
+    <a href="evaluacion.html">📝 Evaluación</a>
+</div>
+
+<!-- ── GALLERY HERO HEADER ────────────────────────────────── -->
+<header class="gallery-hero-header">
+    <div class="inner" data-aos="fade-down">
+        <div class="hero-tag">📸 Archivo Visual</div>
+        <h1>Galería del <em>Museo</em></h1>
+        <p>Un recorrido visual por los espacios, obras y momentos históricos que dan vida al museo.</p>
+    </div>
+</header>
+
+<!-- ── MAIN GALLERY ───────────────────────────────────────── -->
+<main>
+
+    <div class="section-header" data-aos="fade-up" style="margin-top:0; padding-top:0;">
+        <span class="section-tag">Fotografías</span>
+        <h2>Registro <em>Fotográfico</em></h2>
+        <div class="section-divider"></div>
+    </div>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-grid" data-aos="fade-up">
+
+        <div class="gallery-item"
+             data-src="https://upload.wikimedia.org/wikipedia/commons/e/e0/2_de_agosto_de_1810.JPG"
+             data-caption="Recreación de la Masacre del 2 de agosto de 1810 — Figuras de cera de Francisco Barbieri">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/2_de_agosto_de_1810.JPG"
+                 alt="Masacre del 2 de agosto de 1810 — recreación con figuras de cera"
+                 loading="lazy">
+            <div class="gallery-item-overlay">
+                <div class="gallery-item-caption">Masacre del 2 de agosto de 1810</div>
+            </div>
+            <div class="gallery-zoom-icon">⊕</div>
+        </div>
+
+        <div class="gallery-item"
+             data-src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Centro_Cultural_Metropolitano%2C_Quito.jpg"
+             data-caption="Centro Cultural Metropolitano de Quito — Fachada exterior">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Centro_Cultural_Metropolitano%2C_Quito.jpg"
+                 alt="Centro Cultural Metropolitano de Quito"
+                 loading="lazy">
+            <div class="gallery-item-overlay">
+                <div class="gallery-item-caption">Centro Cultural Metropolitano</div>
+            </div>
+            <div class="gallery-zoom-icon">⊕</div>
+        </div>
+
+        <div class="gallery-item"
+             data-src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Museo_Mena_Caama%C3%B1o_Quito.jpg"
+             data-caption="Museo Alberto Mena Caamaño — Sala interior de la colección permanente">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Museo_Mena_Caama%C3%B1o_Quito.jpg"
+                 alt="Sala del Museo Mena Caamaño, Quito"
+                 loading="lazy">
+            <div class="gallery-item-overlay">
+                <div class="gallery-item-caption">Sala de la colección permanente</div>
+            </div>
+            <div class="gallery-zoom-icon">⊕</div>
+        </div>
+
+        <div class="gallery-item"
+             data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Centro_Cultural_Metropolitano%2C_Quito.jpg/800px-Centro_Cultural_Metropolitano%2C_Quito.jpg"
+             data-caption="Patio central del Centro Cultural Metropolitano — Diseño afrancesado del siglo XIX">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Centro_Cultural_Metropolitano%2C_Quito.jpg/800px-Centro_Cultural_Metropolitano%2C_Quito.jpg"
+                 alt="Patio del Centro Cultural Metropolitano"
+                 loading="lazy">
+            <div class="gallery-item-overlay">
+                <div class="gallery-item-caption">Patio central</div>
+            </div>
+            <div class="gallery-zoom-icon">⊕</div>
+        </div>
+
+        <div class="gallery-item"
+             data-src="https://upload.wikimedia.org/wikipedia/commons/e/e0/2_de_agosto_de_1810.JPG"
+             data-caption="Detalle de los patriotas — Escena histórica recreada con figuras de cera">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/2_de_agosto_de_1810.JPG"
+                 alt="Detalle figuras de cera del museo"
+                 loading="lazy"
+                 style="object-position: center 40%;">
+            <div class="gallery-item-overlay">
+                <div class="gallery-item-caption">Detalle: Figuras de cera</div>
+            </div>
+            <div class="gallery-zoom-icon">⊕</div>
+        </div>
+
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section" data-aos="fade-up">
+        <div class="video-header">
+            <div class="video-header-icon">🎬</div>
+            <div>
+                <h3>Documental del Museo</h3>
+                <p>Recorre virtualmente la historia y colecciones del Museo Alberto Mena Caamaño</p>
+            </div>
+        </div>
+        <div class="video-embed">
+            <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Documental Museo Alberto Mena Caamaño"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Gallery CTA -->
+    <div style="text-align:center; padding: 20px 0 40px;" data-aos="fade-up">
+        <a href="evaluacion.html" class="btn-primary">
+            <span>¿Cuánto sabes del museo?</span> <span>→</span>
+        </a>
+    </div>
+
+</main>
+
+<!-- ── LIGHTBOX ───────────────────────────────────────────── -->
+<div id="lightbox">
+    <button class="lb-close" id="lb-close">✕</button>
+    <img id="lb-img" src="" alt="">
+    <div class="lb-caption" id="lb-caption"></div>
+</div>
+
+<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🏛️</div>
+                <div class="logo-text">MUSEO<span class="gold">.</span>MC</div>
+            </a>
+            <p>El Museo Alberto Mena Caamaño preserva la memoria histórica de Quito y el Ecuador a través de arte, arqueología y la recreación de eventos clave de la independencia.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="evaluacion.html">Evaluación</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Visita</h4>
+            <ul>
+                <li><a href="#">García Moreno y Espejo</a></li>
+                <li><a href="#">Mar–Dom · 09:00–16:30</a></li>
+                <li><a href="#">Centro Histórico, Quito</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 · Proyecto UPS — <a href="#">Alejo</a></p>
+        <p>Museo Alberto Mena Caamaño · Centro Cultural Metropolitano</p>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="./js/main.js"></script>
+<script>
+    AOS.init({ duration: 900, once: true, offset: 60, easing: 'ease-out-cubic' });
+</script>
+
 </body>
 </html>
