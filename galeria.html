@@ -10,16 +10,13 @@
 </head>
 <body>
 
-<!-- ── LOADER ─────────────────────────────────────────────── -->
 <div id="loader">
     <div class="loader-logo">MUSEO<span>.</span>MC</div>
     <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
 </div>
 
-<!-- ── SCROLL PROGRESS ────────────────────────────────────── -->
 <div id="scroll-progress"></div>
 
-<!-- ── NAV ────────────────────────────────────────────────── -->
 <nav>
     <div class="nav-container">
         <a href="index.html" class="logo">
@@ -42,14 +39,12 @@
     </div>
 </nav>
 
-<!-- Mobile Nav -->
 <div class="mobile-nav" id="mobile-nav">
     <a href="index.html">🏠 Inicio</a>
     <a href="galeria.html" class="active">🖼️ Galería</a>
     <a href="evaluacion.html">📝 Evaluación</a>
 </div>
 
-<!-- ── GALLERY HERO HEADER ────────────────────────────────── -->
 <header class="gallery-hero-header">
     <div class="inner" data-aos="fade-down">
         <div class="hero-tag">📸 Archivo Visual</div>
@@ -58,7 +53,6 @@
     </div>
 </header>
 
-<!-- ── MAIN GALLERY ───────────────────────────────────────── -->
 <main>
 
     <div class="section-header" data-aos="fade-up" style="margin-top:0; padding-top:0;">
@@ -67,13 +61,12 @@
         <div class="section-divider"></div>
     </div>
 
-    <!-- Gallery Grid -->
     <section class="gallery-grid" data-aos="fade-up">
 
         <div class="gallery-item"
-             data-src="https://upload.wikimedia.org/wikipedia/commons/e/e0/2_de_agosto_de_1810.JPG"
+             data-src="./img/masacre2.jpg"
              data-caption="Recreación de la Masacre del 2 de agosto de 1810 — Figuras de cera de Francisco Barbieri">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/2_de_agosto_de_1810.JPG"
+            <img src="./img/masacre2.jpg"
                  alt="Masacre del 2 de agosto de 1810 — recreación con figuras de cera"
                  loading="lazy">
             <div class="gallery-item-overlay">
@@ -83,9 +76,9 @@
         </div>
 
         <div class="gallery-item"
-             data-src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Centro_Cultural_Metropolitano%2C_Quito.jpg"
+             data-src="./img/centroex.jpg"
              data-caption="Centro Cultural Metropolitano de Quito — Fachada exterior">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Centro_Cultural_Metropolitano%2C_Quito.jpg"
+            <img src="./img/centroex.jpg"
                  alt="Centro Cultural Metropolitano de Quito"
                  loading="lazy">
             <div class="gallery-item-overlay">
@@ -95,9 +88,9 @@
         </div>
 
         <div class="gallery-item"
-             data-src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Museo_Mena_Caama%C3%B1o_Quito.jpg"
+             data-src="./img/sala1.jpg"
              data-caption="Museo Alberto Mena Caamaño — Sala interior de la colección permanente">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Museo_Mena_Caama%C3%B1o_Quito.jpg"
+            <img src="./img/sala1.jpg"
                  alt="Sala del Museo Mena Caamaño, Quito"
                  loading="lazy">
             <div class="gallery-item-overlay">
@@ -107,9 +100,9 @@
         </div>
 
         <div class="gallery-item"
-             data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Centro_Cultural_Metropolitano%2C_Quito.jpg/800px-Centro_Cultural_Metropolitano%2C_Quito.jpg"
+             data-src="./img/centro.jpg"
              data-caption="Patio central del Centro Cultural Metropolitano — Diseño afrancesado del siglo XIX">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Centro_Cultural_Metropolitano%2C_Quito.jpg/800px-Centro_Cultural_Metropolitano%2C_Quito.jpg"
+            <img src="./img/centro.jpg"
                  alt="Patio del Centro Cultural Metropolitano"
                  loading="lazy">
             <div class="gallery-item-overlay">
@@ -119,9 +112,9 @@
         </div>
 
         <div class="gallery-item"
-             data-src="https://upload.wikimedia.org/wikipedia/commons/e/e0/2_de_agosto_de_1810.JPG"
+             data-src="./img/figura.jpg"
              data-caption="Detalle de los patriotas — Escena histórica recreada con figuras de cera">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/2_de_agosto_de_1810.JPG"
+            <img src="./img/figura.jpg"
                  alt="Detalle figuras de cera del museo"
                  loading="lazy"
                  style="object-position: center 40%;">
@@ -133,7 +126,6 @@
 
     </section>
 
-    <!-- Video Section -->
     <section class="video-section" data-aos="fade-up">
         <div class="video-header">
             <div class="video-header-icon">🎬</div>
@@ -143,16 +135,13 @@
             </div>
         </div>
         <div class="video-embed">
-            <iframe
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    title="Documental Museo Alberto Mena Caamaño"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-            </iframe>
+            <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 16px; border: 1px solid var(--border); background: #000;">
+                <source src="video/recorrido.mp4" type="video/mp4">
+                Tu navegador no soporta el formato de video.
+            </video>
         </div>
     </section>
 
-    <!-- Gallery CTA -->
     <div style="text-align:center; padding: 20px 0 40px;" data-aos="fade-up">
         <a href="evaluacion.html" class="btn-primary">
             <span>¿Cuánto sabes del museo?</span> <span>→</span>
@@ -161,14 +150,12 @@
 
 </main>
 
-<!-- ── LIGHTBOX ───────────────────────────────────────────── -->
 <div id="lightbox">
     <button class="lb-close" id="lb-close">✕</button>
     <img id="lb-img" src="" alt="">
     <div class="lb-caption" id="lb-caption"></div>
 </div>
 
-<!-- ── FOOTER ─────────────────────────────────────────────── -->
 <footer>
     <div class="footer-grid">
         <div class="footer-brand">
@@ -196,7 +183,7 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2026 · Proyecto UPS — <a href="#">Alejo</a></p>
+        <p>&copy; 2026 · Proyecto UPS — Alejo</p>
         <p>Museo Alberto Mena Caamaño · Centro Cultural Metropolitano</p>
     </div>
 </footer>

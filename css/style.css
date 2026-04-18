@@ -1666,11 +1666,18 @@ footer {
 /* Description */
 .hc-desc {
     margin-top: 18px;
-    font-size: 0.95rem;
+    font-size: 1.15rem;
     line-height: 1.7;
-    color: rgba(255,255,255,0.72);
-    font-weight: 300;
+
+    /* 1. Hacemos el texto más blanco (menos transparente) */
+    color: rgba(255, 255, 255, 0.95);
+
+    /* 2. Le damos más grosor (antes estaba en 300, 500 es un semi-bold perfecto) */
+    font-weight: 500;
     max-width: 500px;
+
+    /* 3. Le ponemos una sombra oscura para que resalte contra la luz del edificio */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
 }
 
 /* CTA buttons */
