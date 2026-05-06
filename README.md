@@ -4,8 +4,15 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white)
+[![Live Demo](https://img.shields.io/badge/Demo-En_Vivo-brightgreen?style=for-the-badge&logo=google-chrome&logoColor=white)](https://alejandro120325.github.io/MUSEO/)
 
 Este proyecto es una plataforma web moderna, interactiva y responsiva dedicada al **Museo Alberto Mena Caamaño**, ubicado en el Centro Cultural Metropolitano de Quito, Ecuador. Diseñado para ofrecer un recorrido virtual y educativo a través de la historia independentista del país.
+
+## 🔗 Demo en Vivo
+Puedes explorar la experiencia interactiva completa aquí: 
+👉 **[Visitar el Sitio Web del Museo](https://alejandro120325.github.io/MUSEO/)**
+
+---
 
 ## ✨ Características Principales
 
@@ -21,14 +28,15 @@ Este proyecto es una plataforma web moderna, interactiva y responsiva dedicada a
 * **Estructura:** HTML5 Semántico.
 * **Estilos:** CSS3 puro (Uso de variables globales, Flexbox, CSS Grid y animaciones Keyframes).
 * **Lógica:** Vanilla JavaScript (ES6+).
-* **Librerías Externas:** * [GSAP (GreenSock)](https://greensock.com/gsap/) - Para las animaciones complejas del hero.
+* **Librerías Externas:** 
+  * [GSAP (GreenSock)](https://greensock.com/gsap/) - Para las animaciones complejas del hero.
   * [AOS (Animate On Scroll)](https://michalsnik.github.io/aos/) - Para los efectos de aparición de elementos.
 
 ## 🚀 Instalación y Uso
 
 Este es un proyecto estático (Front-end), por lo que no requiere configuración de servidores ni bases de datos.
 
-1. Clona este repositorio en tu máquina local:
+1. **Clona este repositorio en tu máquina local:**
    ```bash
    git clone [https://github.com/Alejandro120325/MUSEO.git](https://github.com/Alejandro120325/MUSEO.git)
 
